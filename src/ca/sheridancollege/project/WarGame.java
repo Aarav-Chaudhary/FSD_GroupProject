@@ -29,7 +29,6 @@ public class WarGame extends Game {
         ArrayList<Card> cardPile = cardDeck.getCards();
         ArrayList<Player> participants = getPlayers();
 
-        // Distribute cards evenly among players
         for (int i = 0; i < cardPile.size(); i++) {
             WarPlayer currentPlayer = (WarPlayer) participants.get(i % participants.size());
             currentPlayer.addCardToHand(cardPile.get(i));
@@ -78,7 +77,6 @@ public class WarGame extends Game {
                 System.out.println(participants.get(strongestCardIndex).getPlayerID() + " wins this round.");
             }
 
-            // Remove players who are out of cards
             ArrayList<Player> outPlayers = new ArrayList<>();
             for (Player participant : participants) {
                 if (((WarPlayer) participant).isHandEmpty()) {
@@ -150,10 +148,10 @@ public class WarGame extends Game {
 
     public static void main(String[] args) {
         WarGame warGame = new WarGame("War Card Game");
-        warGame.getPlayers().add(new WarPlayer("Alex"));
-        warGame.getPlayers().add(new WarPlayer("Jordan"));
-        warGame.getPlayers().add(new WarPlayer("Taylor"));
-        warGame.getPlayers().add(new WarPlayer("Morgan"));
+        warGame.getPlayers().add(new WarPlayer("Jaspuneet"));
+        warGame.getPlayers().add(new WarPlayer("Aarav"));
+        warGame.getPlayers().add(new WarPlayer("Zaid"));
+        warGame.getPlayers().add(new WarPlayer("Bushra"));
 
         warGame.play();
     }
